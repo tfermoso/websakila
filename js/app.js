@@ -21,3 +21,4 @@ document.getElementById("new_actor").addEventListener("click", function () {
     document.getElementById("contenido").hidden = true;
     document.getElementById("form_new_actor").hidden = false;
 })
+
