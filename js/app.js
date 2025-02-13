@@ -5,7 +5,6 @@ document.getElementById("peliculas").addEventListener("click", function () {
         headers: {
             "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dS1hcGkuY29tIiwiYXVkIjoidHUtYXBpLmNvbSIsImlhdCI6MTczOTQ3Mjk5MiwiZXhwIjoxNzM5NDc2NTkyLCJ1c2VyX2lkIjoxfQ.CdpfE2gDhZ3AGVUCFueQ0_Zxz4z1VIoZ7O61_5YDmAY"
         }
-
     })
         .then(response => response.json())
         .then(data => {
@@ -34,9 +33,12 @@ document.getElementById("save_actor").addEventListener("click", function () {
     formData.append("name", first_name);
     formData.append("lastname", last_name);
 
-    fetch("http://192.168.100.166/apisakila/actores/new", {
+    fetch("http://localhost/apisakila/actores/new", {
         method: "POST",
-        body: formData
+        body: formData,
+        headers: {
+            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dS1hcGkuY29tIiwiYXVkIjoidHUtYXBpLmNvbSIsImlhdCI6MTczOTQ3Mjk5MiwiZXhwIjoxNzM5NDc2NTkyLCJ1c2VyX2lkIjoxfQ.CdpfE2gDhZ3AGVUCFueQ0_Zxz4z1VIoZ7O61_5YDmAY"
+        }
     })
     .then(response => response.json())
     .then(data => {
